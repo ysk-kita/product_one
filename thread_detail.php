@@ -22,7 +22,7 @@
         
         print <<<WRITE_THREAD
             <div>
-                <form action="thread_write_confirm.php" method="post">
+                <form action="thread_detail_insert_confirm.php" method="post">
                     user name:<input type="text" name="write_user" /><br />
                     write text:<textarea name="text" rows="4" cols="50"></textarea><br />
                     <button type="submit">writing</button>

@@ -10,5 +10,11 @@
         </div>
     CONFIRM_WRITE_THINGS;
 
-
+    print <<<INSERT_TEXT
+        <form action="thread_insert_compleate.php" method="post">
+            <input type="hidden" value="{$text}" name="text" />
+            <input type="hidden" value="{$insert_user}" name="insert_user" />
+            <button type="submit">writing compleate</button>
+        </form>        
+    INSERT_TEXT;
 ?>
