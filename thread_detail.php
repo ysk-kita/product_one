@@ -35,5 +35,7 @@
         print('Error:'.$e->getMessage());
         die();
     }
+
+    print "<div><label><a href='index.php'>top page</a></label></div>";
 ?>
 
