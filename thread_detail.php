@@ -1,6 +1,6 @@
 <?php
     $thread_title = $_GET['thread_title'];
-    
+    $thread_id = $_GET['thread_id'];
     print "<h2>Viewing thread:{$thread_title}</h2>";
 
     try {
@@ -10,12 +10,15 @@
         
         // スレッドの書込みを表示
         $stmt = $mysqlPdo->prepare(file_get_contents("resource/sql/find_thread_detail_list.sql"));
-        $stmt->execute(array($_GET['thread_id']));
+        $stmt->execute(array($thread_id));
         while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+            
+            $view_text = nl2br($row->text);
+            
             print <<<VIEW_THREAD
                 <div>
                     <span>{$row->row_no}:{$row->insert_user}</span> <br/>
-                    <span>{$row->text}</span>
+                    <span>{$view_text}</span>
                 </div>            
             VIEW_THREAD;
         }
@@ -25,6 +28,7 @@
                 <form action="thread_detail_insert_confirm.php" method="post">
                     user name:<input type="text" name="write_user" /><br />
                     write text:<textarea name="text" rows="4" cols="50"></textarea><br />
+                    <input type="hidden" value="{$thread_id}" name="thread_id" />
                     <button type="submit">writing</button>
                 </form>        
             </div>
