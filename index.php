@@ -9,7 +9,7 @@
         // スレッドタイトル一覧を表示
         $thread_mst_list = $mysqlPdo->query(file_get_contents("resource/sql/find_thread_mst_list.sql"));
         while($row = $thread_mst_list->fetch(PDO::FETCH_OBJ)){
-            print "<label><a href='thread_detail.php?thread_id={$row->thread_id}&thread_title={$row->thread_title}'>{$row->thread_title}({$row->rows})</a></label>";
+            print "<label><a href='thread_detail.php?thread_id={$row->thread_id}' >{$row->thread_title}({$row->rows})</a></label>";
         }        
         
     } catch (PDOException $e){

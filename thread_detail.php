@@ -1,8 +1,5 @@
 <?php
-    $thread_title = $_GET['thread_title'];
     $thread_id = $_GET['thread_id'];
-    print "<h2>Viewing thread:{$thread_title}</h2>";
-
     try {
         # TODO:デプロイ時にホスト等書換
         $mysqlPdo = new PDO("mysql:host=127.0.0.1; port=3306; dbname=ForThread; charset=utf8", "root", "");
