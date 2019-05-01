@@ -18,4 +18,6 @@
             <button type="submit">writing compleate</button>
         </form>        
     INSERT_TEXT;
+
+    print "<label><a href='thread_detail.php?thread_id={$thread_id}'>back</a></label>";
 ?>
