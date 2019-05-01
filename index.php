@@ -16,5 +16,17 @@
         print('Error:'.$e->getMessage());
         die();
     }
+    
+    # todo: アカウント作成も追加
+    print <<<LOGIN
+        <div>
+            <form action="login.php" method="post">
+                id:<input type="text" name="login_id" />
+                password:<input type="texl" name="password" />
+                <button type="submit">login</button>
+            </form>
+        </div>
+    LOGIN;
 ?>
+
 
